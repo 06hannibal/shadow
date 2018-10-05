@@ -1,0 +1,11 @@
+uuid: 07525f7d-c604-40d1-be07-85b9ce52bef1
+langcode: en
+status: true
+dependencies: {  }
+id: own_products
+label: 'own products'
+description: ''
+variationType: default
+injectVariationFields: true
+traits: {  }
+locked: false

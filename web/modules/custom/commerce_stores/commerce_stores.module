@@ -1,0 +1,27 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
+
+  if ($context['items']->getName() == 'stores') {
+
+    $element['#options'] = null;
+
+    $user_id = \Drupal::currentUser()->id();
+    $query = \Drupal::database()->select('commerce_store_field_data', 'csfd');
+    $query->condition('csfd.uid', $user_id);
+    $query->fields('csfd',['store_id','name']);
+    $names=$query->execute()->fetchAll();
+
+    foreach ($names as $name) {
+
+      $element['#options'][$name->store_id]=$name->name;
+    }
+  }
+
+  return $element;
+}

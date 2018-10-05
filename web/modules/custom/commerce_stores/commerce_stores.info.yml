@@ -1,0 +1,7 @@
+name: Commerce Stores
+description: choosing your own stores.
+package: Custom
+
+type: module
+# core: 8.x
+core: 8.x

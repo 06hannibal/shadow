@@ -1,0 +1,35 @@
+uuid: a702e91f-fd98-4884-9e85-8c48ffbce0ff
+langcode: en
+status: true
+dependencies: {  }
+id: producer
+label: Producer
+weight: 3
+is_admin: null
+permissions:
+  - 'access commerce administration pages'
+  - 'access commerce_product overview'
+  - 'access commerce_store overview'
+  - 'access toolbar'
+  - 'administer commerce_product_variation form display'
+  - 'create online commerce_store'
+  - 'create own_products commerce_product'
+  - 'create product commerce_product'
+  - 'create shop_type commerce_store'
+  - 'create sku commerce_product'
+  - 'delete any product commerce_product'
+  - 'delete any shop_type commerce_store'
+  - 'delete own online commerce_store'
+  - 'delete own own_products commerce_product'
+  - 'delete own shop_type commerce_store'
+  - 'delete own sku commerce_product'
+  - 'manage default commerce_product_variation'
+  - 'manage product commerce_product_variation'
+  - 'update any product commerce_product'
+  - 'update any shop_type commerce_store'
+  - 'update own online commerce_store'
+  - 'update own own_products commerce_product'
+  - 'update own shop_type commerce_store'
+  - 'view commerce_store'
+  - 'view own_products commerce_product'
+  - 'view shop_type commerce_store'
