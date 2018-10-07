@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - distributor_role # This is the name of the module.
+id: distributor
+label: 'Distributor'
+weight: 3
+is_admin: false
+permissions: {}

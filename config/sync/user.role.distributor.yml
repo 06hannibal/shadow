@@ -1,0 +1,14 @@
+uuid: 00da8126-33f0-484f-a8a5-a3d5c53fe9ae
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - distributor_role
+_core:
+  default_config_hash: OvEztKZvTNdxYq91XgnRpXD6bYMaM1hV41VfrfoDow0
+id: distributor
+label: Distributor
+weight: 3
+is_admin: false
+permissions: {  }

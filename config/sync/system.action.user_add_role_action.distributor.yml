@@ -1,0 +1,14 @@
+uuid: 1315d6d8-5a0e-446d-bf01-09c79387b875
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.distributor
+  module:
+    - user
+id: user_add_role_action.distributor
+label: 'Add the Distributor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: distributor
