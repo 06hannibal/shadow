@@ -1,0 +1,10 @@
+uuid: c9b3a976-18a3-4d41-a8a8-b54afa9af357
+langcode: en
+status: true
+dependencies: {  }
+id: plants
+label: Plants
+orderItemType: default
+generateTitle: null
+traits: {  }
+locked: false
