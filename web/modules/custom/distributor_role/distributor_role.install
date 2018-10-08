@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install and uninstall functions for the commerce_marketplace module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function distributor_role_uninstall() {
+  // Make some clean up after ourselves.
+  if ($role = user_role_load('distributor')) {
+    $role->delete();
+  }
+}
