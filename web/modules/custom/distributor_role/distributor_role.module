@@ -9,11 +9,9 @@ function distributor_role_field_widget_form_alter(&$element, FormStateInterface 
   $user_id = \Drupal::currentUser()->id();
   $user_role = \Drupal::currentUser()->getRoles();
   if ($context['items']->getName() == 'stores') {
-    if ( in_array("administrator", $user_role)) {
-    }
-    elseif (in_array("distributor", $user_role)) {
+    if ( in_array("administrator", $user_role)) { }
+    elseif (in_array("distributor", $user_role) || in_array("producer", $user_role)) {
       $element['#options'] = NULL;
-      kint($element['#options']);
       $stores = \Drupal\commerce_store\Entity\Store::loadMultiple();
       foreach ($stores as $store_id => $store) {
         if ($user_id == $store->getOwnerId()) {
@@ -24,3 +22,5 @@ function distributor_role_field_widget_form_alter(&$element, FormStateInterface 
     return $element;
   }
 }
+
+

@@ -31,6 +31,5 @@ permissions:
   - 'update own own_products commerce_product'
   - 'update own shop_type commerce_store'
   - 'view commerce_store'
-  - 'view own unpublished commerce_product'
   - 'view own_products commerce_product'
   - 'view shop_type commerce_store'
