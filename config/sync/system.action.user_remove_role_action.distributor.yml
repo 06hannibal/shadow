@@ -1,0 +1,14 @@
+uuid: 6ef868f4-4d76-47b1-90c1-3add4c8465e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.distributor
+  module:
+    - user
+id: user_remove_role_action.distributor
+label: 'Remove the Distributor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: distributor
