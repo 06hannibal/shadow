@@ -6,21 +6,34 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_field_widget_form_alter().
  */
 function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
-  $user_id = \Drupal::currentUser()->id();
-  $user_role = \Drupal::currentUser()->getRoles();
+
   if ($context['items']->getName() == 'stores') {
-    if ( in_array("administrator", $user_role)) { }
-    elseif (in_array("distributor", $user_role) || in_array("producer", $user_role)) {
-      $element['#options'] = NULL;
-      $stores = \Drupal\commerce_store\Entity\Store::loadMultiple();
-      foreach ($stores as $store_id => $store) {
-        if ($user_id == $store->getOwnerId()) {
-          $element['#options'][$store_id] = $store->getName();
-        }
-      }
+
+    $user_id = \Drupal::currentUser()->id();
+
+    $query_role = \Drupal::database()->select('user__roles', 'ur');
+    $query_role->Join('commerce_store_field_data', 'csfd', 'ur.revision_id = csfd.uid');
+    $query_role->condition('ur.roles_target_id', 'producer');
+    $query_role->condition('csfd.uid', $user_id);
+    $query_role->fields('ur',['roles_target_id']);
+    $audit=$query_role->execute()->fetchField();
+
+    if ($audit) {
+      $element['#options'] = false;
     }
-    return $element;
+
+    $user_id = \Drupal::currentUser()->id();
+
+    $query = \Drupal::database()->select('commerce_store_field_data', 'csfd');
+    $query->condition('csfd.uid', $user_id);
+    $query->fields('csfd',['store_id','name']);
+    $names=$query->execute()->fetchAll();
+
+    foreach ($names as $name) {
+
+      $element['#options'][$name->store_id]=$name->name;
+    }
   }
+
+  return $element;
 }
-
-

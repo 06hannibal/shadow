@@ -1,0 +1,28 @@
+uuid: 37a0976e-1256-4af8-a009-e213333f3e2c
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - distributor_role
+_core:
+  default_config_hash: 3wjqc5WiY25HLk3K0z1LmSggbzCLMMxMtl8Xq_sYXXU
+id: distributor
+label: Distributor
+weight: 3
+is_admin: false
+permissions:
+  - 'access commerce administration pages'
+  - 'access commerce_product overview'
+  - 'access toolbar'
+  - 'administer commerce_product_variation form display'
+  - 'create online commerce_store'
+  - 'create own_products commerce_product'
+  - 'delete own online commerce_store'
+  - 'delete own own_products commerce_product'
+  - 'manage default commerce_product_variation'
+  - 'update own online commerce_store'
+  - 'update own own_products commerce_product'
+  - 'view commerce_store'
+  - 'view own commerce_store'
+  - 'view own_products commerce_product'

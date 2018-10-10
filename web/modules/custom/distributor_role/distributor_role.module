@@ -9,13 +9,16 @@ function distributor_role_field_widget_form_alter(&$element, FormStateInterface 
   $user_id = \Drupal::currentUser()->id();
   $user_role = \Drupal::currentUser()->getRoles();
   if ($context['items']->getName() == 'stores') {
-    if ( in_array("administrator", $user_role)) { }
-    elseif (in_array("distributor", $user_role) || in_array("producer", $user_role)) {
+    if (in_array("distributor", $user_role)) {
       $element['#options'] = NULL;
-      $stores = \Drupal\commerce_store\Entity\Store::loadMultiple();
-      foreach ($stores as $store_id => $store) {
-        if ($user_id == $store->getOwnerId()) {
-          $element['#options'][$store_id] = $store->getName();
+      $stores = \Drupal::entityTypeManager()->
+        getStorage("commerce_store")->
+        loadByProperties(['uid' => $user_id]);
+      if (! $stores){
+        $element['#suffix'] = "<div><h2>Add own store, please</h2></div>";
+      } else {
+        foreach ($stores as $store) {
+          $element['#options'][$store->id()] = $store->getName();
         }
       }
     }
@@ -23,4 +26,15 @@ function distributor_role_field_widget_form_alter(&$element, FormStateInterface 
   }
 }
 
+/**
+ * Implements hook_views_pre_view().
+ */
+function distributor_role_views_pre_view(&$view, &$display_id, &$args){
+  if ($view->id() == "commerce_stores" || $view->id() =="commerce_products"){
+  $user_role = \Drupal::currentUser()->getRoles();
+    if (in_array("administrator", $user_role)) {
+      $view->setArguments(["1"]);
+    }
+  }
+}
 
