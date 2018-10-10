@@ -3,7 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
+<<<<<<< HEAD:config/sync/views.view.products.yml
     - user.role.manufacturer
+=======
+    - user.role.distributor
+    - user.role.producer
+>>>>>>> bratbranch:config/sync/views.view.commerce_products.yml
   module:
     - commerce
     - commerce_product
@@ -469,7 +474,10 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+<<<<<<< HEAD:config/sync/views.view.products.yml
               manufacturer: '0'
+=======
+>>>>>>> bratbranch:config/sync/views.view.commerce_products.yml
             reduce: false
             hide_single_bundle: true
           is_grouped: false
@@ -561,7 +569,7 @@ display:
           admin_label: ''
           default_action: default
           exception:
-            value: all
+            value: '1'
             title_enable: false
             title: All
           title_enable: false
@@ -587,7 +595,12 @@ display:
             multiple: 0
             restrict_roles: true
             roles:
+<<<<<<< HEAD:config/sync/views.view.products.yml
               manufacturer: manufacturer
+=======
+              distributor: distributor
+              producer: producer
+>>>>>>> bratbranch:config/sync/views.view.commerce_products.yml
             access: false
           break_phrase: false
           not: false
@@ -604,6 +617,11 @@ display:
         - url.query_args
         - user
         - user.permissions
+<<<<<<< HEAD:config/sync/views.view.products.yml
+=======
+      cacheable: false
+      max-age: 0
+>>>>>>> bratbranch:config/sync/views.view.commerce_products.yml
       tags: {  }
   page_1:
     display_plugin: page
@@ -622,4 +640,9 @@ display:
         - url.query_args
         - user
         - user.permissions
+<<<<<<< HEAD:config/sync/views.view.products.yml
+=======
+      cacheable: false
+      max-age: 0
+>>>>>>> bratbranch:config/sync/views.view.commerce_products.yml
       tags: {  }

@@ -21,5 +21,4 @@ permissions:
   - 'update own online commerce_store'
   - 'update own own_products commerce_product'
   - 'view commerce_store'
-  - 'view own unpublished commerce_product'
   - 'view own_products commerce_product'

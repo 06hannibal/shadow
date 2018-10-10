@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function distributor_role_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
+  $user_id = \Drupal::currentUser()->id();
+  $user_role = \Drupal::currentUser()->getRoles();
+  if ($context['items']->getName() == 'stores') {
+    if (in_array("distributor", $user_role)) {
+      $element['#options'] = NULL;
+      $stores = \Drupal::entityTypeManager()->
+        getStorage("commerce_store")->
+        loadByProperties(['uid' => $user_id]);
+      if (! $stores){
+        $element['#suffix'] = "<div><h2>Add own store, please</h2></div>";
+      } else {
+        foreach ($stores as $store) {
+          $element['#options'][$store->id()] = $store->getName();
+        }
+      }
+    }
+    return $element;
+  }
+}
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function distributor_role_views_pre_view(&$view, &$display_id, &$args){
+  if ($view->id() == "commerce_stores" || $view->id() =="commerce_products"){
+  $user_role = \Drupal::currentUser()->getRoles();
+    if (in_array("administrator", $user_role)) {
+      $view->setArguments(["1"]);
+    }
+  }
+}
+

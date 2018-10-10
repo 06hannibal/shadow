@@ -20,7 +20,13 @@ function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &
     getStorage("commerce_store")->
     loadByProperties(['uid' => $user_id]);
 
+<<<<<<< HEAD
     if ($commerce_stores) {
+=======
+    if ($audit) {
+      $element['#options'] = false;
+    }
+>>>>>>> bratbranch
 
       $link_login = t('add own commerce store');
       $url_stores = '/admin/commerce/config/stores';
