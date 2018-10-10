@@ -1,0 +1,14 @@
+uuid: eecda951-bb3f-495e-b46d-17c07176e1e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.manufacturer
+  module:
+    - user
+id: user_remove_role_action.manufacturer
+label: 'Remove the manufacturer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: manufacturer

@@ -1,0 +1,14 @@
+uuid: 948e9dc0-ee73-40de-b4ee-1355e40abf97
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.manufacturer
+  module:
+    - user
+id: user_add_role_action.manufacturer
+label: 'Add the manufacturer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: manufacturer

@@ -1,20 +1,18 @@
-uuid: 2ad97583-b68b-41b3-918a-5f8a655559c8
+uuid: f4e90667-f5af-45d2-9a97-44a7f93b79c4
 langcode: en
 status: true
 dependencies:
   config:
-    - user.role.producer
+    - user.role.manufacturer
   module:
     - commerce
     - commerce_store
     - user
-_core:
-  default_config_hash: '-X1gJHmWCoN8z6urr4N2eYcfT9_kGyKMCoS1kh1IbPQ'
-id: commerce_stores
+id: stores
 label: Stores
 module: views
 description: ''
-tag: Commerce
+tag: ''
 base_table: commerce_store_field_data
 base_field: store_id
 core: 8.x
@@ -26,11 +24,10 @@ display:
     position: 0
     display_options:
       access:
-        type: perm
-        options:
-          perm: 'access commerce_store overview'
-      cache:
         type: none
+        options: {  }
+      cache:
+        type: tag
         options: {  }
       query:
         type: views_query
@@ -57,6 +54,11 @@ display:
           offset: 0
           id: 0
           total_pages: null
+          tags:
+            previous: '‹ previous'
+            next: 'next ›'
+            first: '« First'
+            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -65,51 +67,9 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          tags:
-            previous: '‹ previous'
-            next: 'next ›'
-            first: '« first'
-            last: 'last »'
           quantity: 9
       style:
         type: table
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          override: true
-          sticky: false
-          caption: ''
-          summary: ''
-          description: ''
-          columns:
-            name: name
-            type: type
-            operations: operations
-          info:
-            name:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            type:
-              sortable: true
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: true
-              responsive: ''
-            operations:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-          default: '-1'
-          empty_table: true
       row:
         type: fields
       fields:
@@ -167,9 +127,12 @@ display:
           entity_type: commerce_store
           plugin_id: bulk_form
         name:
-          id: name
           table: commerce_store_field_data
           field: name
+          id: name
+          entity_type: null
+          entity_field: name
+          plugin_id: field
           relationship: none
           group_type: group
           admin_label: ''
@@ -216,8 +179,7 @@ display:
           hide_alter_empty: true
           click_sort_column: value
           type: string
-          settings:
-            link_to_entity: false
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -228,9 +190,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: null
-          entity_field: name
-          plugin_id: field
         type:
           id: type
           table: commerce_store_field_data
@@ -374,6 +333,7 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
+              manufacturer: '0'
             reduce: false
             hide_single_bundle: true
           is_grouped: false
@@ -400,12 +360,6 @@ display:
           id: area_text_custom
           table: views
           field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: 'No stores available.'
           plugin_id: text_custom
       relationships:
         uid:
@@ -455,7 +409,7 @@ display:
             multiple: 0
             restrict_roles: true
             roles:
-              producer: producer
+              manufacturer: manufacturer
             access: false
           break_phrase: false
           not: false
@@ -464,15 +418,13 @@ display:
           plugin_id: numeric
       display_extenders: {  }
     cache_metadata:
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user
-        - user.permissions
-      cacheable: false
-      max-age: 0
       tags: {  }
   page_1:
     display_plugin: page
@@ -483,13 +435,11 @@ display:
       display_extenders: {  }
       path: admin/commerce/config/stores
     cache_metadata:
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
         - url.query_args
         - user
-        - user.permissions
-      cacheable: false
-      max-age: 0
       tags: {  }

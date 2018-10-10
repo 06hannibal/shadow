@@ -7,33 +7,53 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
 
+  $user_id = \Drupal::currentUser()->id();
+  $user_role = \Drupal::currentUser()->getRoles();
+
   if ($context['items']->getName() == 'stores') {
 
-    $user_id = \Drupal::currentUser()->id();
-
-    $query_role = \Drupal::database()->select('user__roles', 'ur');
-    $query_role->Join('commerce_store_field_data', 'csfd', 'ur.revision_id = csfd.uid');
-    $query_role->condition('ur.roles_target_id', 'producer');
-    $query_role->condition('csfd.uid', $user_id);
-    $query_role->fields('ur',['roles_target_id']);
-    $audit=$query_role->execute()->fetchField();
-
-    if ($audit==true) {
-      $element['#options'] = false;
+    if (in_array("manufacturer",$user_role)) {
+      $element['#options'] = NULL;
     }
 
-    $user_id = \Drupal::currentUser()->id();
+    $commerce_stores = \Drupal::entityTypeManager()->
+    getStorage("commerce_store")->
+    loadByProperties(['uid' => $user_id]);
 
-    $query = \Drupal::database()->select('commerce_store_field_data', 'csfd');
-    $query->condition('csfd.uid', $user_id);
-    $query->fields('csfd',['store_id','name']);
-    $names=$query->execute()->fetchAll();
+    if ($commerce_stores) {
 
-    foreach ($names as $name) {
+      $link_login = t('add own commerce store');
+      $url_stores = '/admin/commerce/config/stores';
 
-      $element['#options'][$name->store_id]=$name->name;
+      $element['#suffix'] = "<div class='product-manufacturer'><a href='".$url_stores."'>".$link_login."</a></div>";
+
+    } else {
+
+      foreach ($commerce_stores as $commerce_store) {
+
+        $element['#options'][$commerce_store->id()]=$commerce_store->getName();
+      }
     }
+    return $element;
   }
-
-  return $element;
 }
+//
+///**
+// * Implements  hook_form_alter().
+// */
+//function commerce_stores_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//
+//  if($form_id=="commerce_stock_transactions1") {
+//
+//    kint($form);
+//
+//    $form['name'] = array(
+//      '#type' => 'textfield',
+//      '#title' => t('Name'),
+//      '#description' => t(''),
+//      '#maxlength' => 64,
+//      '#size' => 64,
+//      '#weight' => '0',
+//    );
+//  }
+//}
