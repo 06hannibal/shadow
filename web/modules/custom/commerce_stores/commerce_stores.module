@@ -15,7 +15,7 @@ function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &
     if (in_array("manufacturer",$user_role)) {
       $element['#options'] = NULL;
     }
-
+111
     $commerce_stores = \Drupal::entityTypeManager()->
     getStorage("commerce_store")->
     loadByProperties(['uid' => $user_id]);
