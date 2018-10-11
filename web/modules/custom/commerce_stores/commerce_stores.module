@@ -13,7 +13,7 @@ function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &
 
     $query_role = \Drupal::database()->select('user__roles', 'ur');
     $query_role->Join('commerce_store_field_data', 'csfd', 'ur.revision_id = csfd.uid');
-    $query_role->condition('ur.roles_target_id', 'producer');
+    $query_role->condition('ur.roles_target_id', 'manufacturer');
     $query_role->condition('csfd.uid', $user_id);
     $query_role->fields('ur',['roles_target_id']);
     $audit=$query_role->execute()->fetchField();

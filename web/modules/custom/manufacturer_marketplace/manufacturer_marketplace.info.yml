@@ -1,0 +1,9 @@
+name: Manufacturer Marketplace
+type: module
+description: 'Change pages for stores, products, list products.'
+core: 8.x
+dependencies:
+  - commerce:commerce_store
+  - commerce:commerce_product
+
+

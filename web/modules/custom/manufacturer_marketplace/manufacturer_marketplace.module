@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implements hook_views_pre_view().
+ */
+function manufacturer_marketplace_views_pre_view(&$view, &$display_id, &$args){
+  if ($view->id() == "manufacturer_products" || $view->id() =="	manufacturer_store"){
+
+    $view['add_element']['#prefix'] = '<div><h3>BUTTON</h3></div>';
+
+//    $user_role = \Drupal::currentUser()->getRoles();
+//    if (in_array("manufacturer", $user_role)) {
+//    }
+
+
+  }
+}
+
