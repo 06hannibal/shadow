@@ -1,0 +1,28 @@
+uuid: e67a894b-b741-4e09-b521-0b4e6fda29f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_stock_local.commerce_stock_location_type.default
+    - field.storage.commerce_stock_location.field_author
+id: commerce_stock_location.default.field_author
+field_name: field_author
+entity_type: commerce_stock_location
+bundle: default
+label: author
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

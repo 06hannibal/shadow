@@ -1,0 +1,20 @@
+uuid: f904aa17-a5ec-497c-a3d6-a18c8693748b
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_stock_local
+    - user
+id: commerce_stock_location.field_author
+field_name: field_author
+entity_type: commerce_stock_location
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

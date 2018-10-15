@@ -1,4 +1,4 @@
-uuid: a613728d-9ff7-4058-8eb8-b646c9d29cd5
+uuid: 216dd349-272f-42ca-ab32-1c4e64c79438
 langcode: en
 status: true
 dependencies:
@@ -14,10 +14,14 @@ is_admin: false
 permissions:
   - 'access commerce administration pages'
   - 'access commerce_product overview'
-  - 'access commerce_product_attribute overview'
   - 'access commerce_store overview'
   - 'access toolbar'
+  - 'administer commerce stock location entities'
+  - 'administer commerce stock location types'
   - 'administer commerce_product_variation form display'
+  - 'administer commerce_stock_location display'
+  - 'administer commerce_stock_location fields'
+  - 'administer commerce_stock_location form display'
   - 'create online commerce_store'
   - 'create own_products commerce_product'
   - 'delete own online commerce_store'

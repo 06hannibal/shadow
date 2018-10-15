@@ -7,55 +7,110 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &$form_state, $context) {
 
-  $user_id = \Drupal::currentUser()->id();
-  $user_role = \Drupal::currentUser()->getRoles();
+  $user_id = Drupal::currentUser()->id();
+  $user_role = Drupal::currentUser()->getRoles();
 
+  //field of adding a store
   if ($context['items']->getName() == 'stores') {
 
     if (in_array("manufacturer",$user_role)) {
       $element['#options'] = NULL;
     }
 
-    $commerce_stores = \Drupal::entityTypeManager()->
+    $stores = Drupal::entityTypeManager()->
     getStorage("commerce_store")->
     loadByProperties(['uid' => $user_id]);
 
-    if (!$commerce_stores) {
-
+    if (!$stores) {
       $element['#options'] = false;
-
-      $link_login = t('add own commerce store');
-      $url_stores = '/admin/commerce/config/stores';
-
-      $element['#suffix'] = "<div class='product-manufacturer'><a href='".$url_stores."'>".$link_login."</a></div>";
-
+      $title_store = t('add own commerce store');
+      $url_stores = '/store/add/online';
+      $element['#suffix'] = "<div><a class='button button-action button--primary button--small' href='".$url_stores."'>".$title_store."</a></div>";
     } else {
 
-      foreach ($commerce_stores as $commerce_store) {
+      foreach ($stores as $store) {
 
-        $element['#options'][$commerce_store->id()]=$commerce_store->getName();
+        $element['#options'][$store->id()]=$store->getName();
       }
     }
     return $element;
   }
 }
-//
-///**
-// * Implements  hook_form_alter().
-// */
-//function commerce_stores_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-//
-//  if($form_id=="commerce_stock_transactions1") {
-//
-//    kint($form);
-//
-//    $form['name'] = array(
-//      '#type' => 'textfield',
-//      '#title' => t('Name'),
-//      '#description' => t(''),
-//      '#maxlength' => 64,
-//      '#size' => 64,
-//      '#weight' => '0',
-//    );
-//  }
-//}
+
+/**
+ * Implements hook_form_alter().
+ */
+function commerce_stores_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $user_id = Drupal::currentUser()->id();
+  $user_role = Drupal::currentUser()->getRoles();
+
+  if($form_id=="commerce_stock_transactions1") {
+
+    if (in_array("manufacturer",$user_role)) {
+      $products = Drupal::entityTypeManager()->getStorage('commerce_product')->loadByProperties(['uid' => $user_id]);
+    } else {
+      $products = Drupal::entityTypeManager()->getStorage('commerce_product')->loadByProperties();
+    }
+
+    $options = [];
+
+    foreach ($products as $product) {
+      $options[$product->id()] = $product->getTitle();
+    }
+
+    if (!$options) {
+      $title_product = t('add own commerce product');
+      $url_product = '/product/add/own_products';
+      $form['product_variation'] = [
+        '#markup' => '<div><a class="button button-action button--primary button--small" href="'.$url_product.'">'.$title_product.'</a></div>',
+      ];
+      $form['submit'] = NULL;
+    } else {
+      $form['product_variation'] = [
+        '#type' => 'select',
+        '#options' => $options,
+        '#title' => t('Create stock transaction'),
+        '#empty_option' => 'stock transaction',
+        '#required' => TRUE,
+      ];
+    }
+  }
+  //Create stock transaction
+  if ($form_id=="commerce_stock_transactions2") {
+
+    if (in_array("manufacturer",$user_role)) {
+      $products_stock = Drupal::entityTypeManager()->getStorage('commerce_stock_location')->loadByProperties(['field_author' => $user_id]);
+    } else {
+      $products_stock = Drupal::entityTypeManager()->getStorage('commerce_stock_location')->loadByProperties();
+    }
+    $options_location = [];
+    foreach ($products_stock as $product_stock) {
+      $options_location[$product_stock->id()] = $product_stock->getName();
+    }
+    if (!$options_location) {
+      $title_location = t('add stock location');
+      $url_location = '/commerce_stock_location/add/default';
+      $form['source']['source_location'] = [
+        '#markup' => '<div><a class="button button-action button--primary button--small" href="'.$url_location.'">'.$title_location.'</a></div>',
+      ];
+      $form['transaction_type'] = NULL;
+      $form['transaction_type'] = NULL;
+      $form['product_variation_id'] = NULL;
+      $form['source']['source_zone'] = NULL;
+      $form['target'] = NULL;
+      $form['user'] = NULL;
+      $form['order'] = NULL;
+      $form['transaction_qty'] = NULL;
+      $form['transaction_note'] = NULL;
+      $form['submit'] = NULL;
+    } else {
+      $form['source']['source_location'] = [
+        '#type' => 'select',
+        '#options' => $options_location,
+        '#title' => t('location'),
+        '#empty_option' => 'select location',
+        '#required' => TRUE,
+      ];
+    }
+  }
+}
