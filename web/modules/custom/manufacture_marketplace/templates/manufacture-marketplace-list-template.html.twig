@@ -1,0 +1,32 @@
+{{ attach_library('manufacture_marketplace/manufacture_marketplace') }}
+<table id="manufacture-marketplace-list">
+  <tr>
+    <th>Product number</th>
+    <th>Title</th>
+    <th>Id</th>
+  </tr>
+  {% for count, product in product_list %}
+    {% if product.link %}
+      <tr onclick="document.location='{{ product.link }}'" >
+    {% else %}
+      <tr>
+    {% endif %}
+      <td>
+        <div>
+          {{ count }}
+        </div>
+      </td>
+      <td>
+        <div>
+          {{ product.title}}
+        </div>
+      </td>
+      <td>
+        <div>
+          {{ product.id }}
+        </div>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+

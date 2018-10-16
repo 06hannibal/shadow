@@ -26,15 +26,18 @@ function distributor_role_field_widget_form_alter(&$element, FormStateInterface 
   }
 }
 
-/**
- * Implements hook_views_pre_view().
- */
-function distributor_role_views_pre_view(&$view, &$display_id, &$args){
-  if ($view->id() == "commerce_stores" || $view->id() =="commerce_products"){
-  $user_role = \Drupal::currentUser()->getRoles();
-    if (in_array("administrator", $user_role)) {
-      $view->setArguments(["1"]);
-    }
-  }
-}
+
+// uncomment, if contextual filter hides stores and/or products
+///**
+// * Implements hook_views_pre_view().
+// */
+//function distributor_role_views_pre_view(&$view, &$display_id, &$args){
+//  $view_id = $view->id();
+//  if ($view_id == "stores" || $view_id =="products"){
+//    $user_role = \Drupal::currentUser()->getRoles();
+//    if (in_array("administrator", $user_role)) {
+//      $view->setArguments(["1"]);
+//    }
+//  }
+//}
 

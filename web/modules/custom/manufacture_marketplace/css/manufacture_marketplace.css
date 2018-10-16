@@ -1,0 +1,5 @@
+#manufacture-marketplace-list tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+

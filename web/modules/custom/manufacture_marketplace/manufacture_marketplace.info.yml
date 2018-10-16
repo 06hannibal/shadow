@@ -1,0 +1,6 @@
+name: Manufacture Marketplace
+description: 'Order Manufacture products'
+package: custom
+type: module
+core: 8.x
+configure: 'Manufacture Marketplace'

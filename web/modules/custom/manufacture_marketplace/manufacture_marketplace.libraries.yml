@@ -1,0 +1,9 @@
+manufacture_marketplace:
+  version: 1.x
+  css:
+    theme:
+      css/manufacture_marketplace.css: {}
+  js:
+  dependencies:
+
+

@@ -15,22 +15,22 @@ function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &
 
     if (in_array("manufacturer",$user_role)) {
       $element['#options'] = NULL;
-    }
 
-    $stores = Drupal::entityTypeManager()->
-    getStorage("commerce_store")->
-    loadByProperties(['uid' => $user_id]);
+      $stores = Drupal::entityTypeManager()->
+      getStorage("commerce_store")->
+      loadByProperties(['uid' => $user_id]);
 
-    if (!$stores) {
-      $element['#options'] = false;
-      $title_store = t('add own commerce store');
-      $url_stores = '/store/add/online';
-      $element['#suffix'] = "<div><a class='button button-action button--primary button--small' href='".$url_stores."'>".$title_store."</a></div>";
-    } else {
+      if (!$stores) {
+        $element['#options'] = false;
+        $title_store = t('add own commerce store');
+        $url_stores = '/store/add/online';
+        $element['#suffix'] = "<div><a class='button button-action button--primary button--small' href='".$url_stores."'>".$title_store."</a></div>";
+      } else {
 
-      foreach ($stores as $store) {
+        foreach ($stores as $store) {
 
-        $element['#options'][$store->id()]=$store->getName();
+          $element['#options'][$store->id()] = $store->getName();
+        }
       }
     }
     return $element;

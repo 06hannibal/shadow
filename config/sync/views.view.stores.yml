@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - user.role.distributor
     - user.role.manufacturer
   module:
     - commerce
@@ -383,7 +384,7 @@ display:
           admin_label: ''
           default_action: default
           exception:
-            value: all
+            value: '1'
             title_enable: false
             title: All
           title_enable: false
@@ -403,12 +404,13 @@ display:
           specify_validation: true
           validate:
             type: 'entity:user'
-            fail: ignore
+            fail: 'not found'
           validate_options:
             operation: view
             multiple: 0
             restrict_roles: true
             roles:
+              distributor: distributor
               manufacturer: manufacturer
             access: false
           break_phrase: false

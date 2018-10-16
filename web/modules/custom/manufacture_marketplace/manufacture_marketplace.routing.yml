@@ -1,0 +1,16 @@
+manufacture_marketplace.form:
+  path: '/admin/commerce/products/manufacturers/order/{product_id}'
+  defaults:
+    _title: 'Manufacture Marketplace'
+    _form: 'Drupal\manufacture_marketplace\Form\ManufactureMarketplaceForm'
+  requirements:
+    _permission: 'access content'
+
+manufacture_marketplace.list:
+  path: '/admin/commerce/products/manufacturers/list'
+  defaults:
+    _title: 'Manufacture Marketplace'
+    _controller: 'Drupal\manufacture_marketplace\Controller\ManufactureMarketplaceController::content'
+  requirements:
+    _permission: 'access content'
+

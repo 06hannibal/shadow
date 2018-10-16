@@ -46,6 +46,7 @@ module:
   inline_entity_form: 0
   kint: 0
   link: 0
+  manufacture_marketplace: 0
   menu_ui: 0
   node: 0
   options: 0
