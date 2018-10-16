@@ -55,7 +55,6 @@ module:
   quickedit: 0
   rdf: 0
   rest: 0
-  restui: 0
   search: 0
   serialization: 0
   shortcut: 0
