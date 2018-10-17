@@ -1,0 +1,18 @@
+uuid: 1badcebc-54ea-4412-ad5b-34db686ea4de
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - commerce_store
+    - hal
+id: entity.commerce_store
+plugin_id: 'entity:commerce_store'
+granularity: resource
+configuration:
+  methods:
+    - DELETE
+  formats:
+    - hal_json
+  authentication:
+    - basic_auth
