@@ -7,11 +7,9 @@
 
 namespace Drupal\manufacture_marketplace\Form;
 
-use Drupal\Core\Database\Database;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
 * Form for sending letters on email.
@@ -133,16 +131,11 @@ class ManufactureMarketplaceForm extends FormBase {
       'mail' => $user_email, // The email address for the order.
       'uid' => $user_id , // The user id the order belongs to.
       'ip_address' => $user_ip, // The ip address the user ordered from.
-//      'order_number' => '6', // Sets the order number. If left out, will use the order's entity ID.
       'billing_profile' => $profile, // The profile we just created.
       'store_id' => $store_id, // The store we created above.
       'order_items' => [$order_item], // The order item we just created.
       'placed' => time(), // The time the order was placed.
     ]);
-    $order->save();
-
-    // You can also add order items to an order.
-    $order->addItem($order_item);
     $order->save();
 
         drupal_set_message(t('The order is processed!'));
