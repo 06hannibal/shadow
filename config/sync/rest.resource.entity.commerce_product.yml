@@ -1,0 +1,23 @@
+uuid: bf6a202e-42fd-4b55-86d4-d24b853845a8
+langcode: en
+status: false
+dependencies:
+  module:
+    - basic_auth
+    - commerce_product
+    - hal
+    - serialization
+id: entity.commerce_product
+plugin_id: 'entity:commerce_product'
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
+  DELETE:
+    supported_formats:
+      - hal_json
+    supported_auth:
+      - basic_auth

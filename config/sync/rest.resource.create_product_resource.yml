@@ -1,19 +1,17 @@
-uuid: 1badcebc-54ea-4412-ad5b-34db686ea4de
+uuid: fb36083f-3cd7-4681-9771-2fc018474fad
 langcode: en
 status: true
 dependencies:
   module:
     - basic_auth
-    - commerce_store
     - hal
-id: entity.commerce_store
-plugin_id: 'entity:commerce_store'
+    - rest_product
+id: create_product_resource
+plugin_id: create_product_resource
 granularity: resource
 configuration:
   methods:
-    - GET
     - POST
-    - DELETE
     - PATCH
   formats:
     - hal_json

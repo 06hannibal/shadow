@@ -1,0 +1,9 @@
+name: Rest Product 
+description: 'Creating Product by Rest'
+package: custom
+type: module
+core: 8.x
+configure: 'Rest Product'
+
+dependencies:
+ - rest
