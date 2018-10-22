@@ -1,0 +1,17 @@
+uuid: 8bae26c5-4d48-430a-a111-1b0d4c12e5a6
+langcode: en
+status: false
+dependencies:
+  module:
+    - basic_auth
+    - commerce_product
+    - serialization
+id: entity.commerce_product_variation
+plugin_id: 'entity:commerce_product_variation'
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth
