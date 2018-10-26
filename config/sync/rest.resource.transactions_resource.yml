@@ -1,0 +1,21 @@
+uuid: bd60dde9-a37d-4936-a9f2-4c9fde76a282
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - hal
+    - serialization
+    - transactions_stock
+_core:
+  default_config_hash: 0xiqugFVDEhss037BevJwnzTQK04dZVi4bYQiQt2cnM
+id: transactions_resource
+plugin_id: transactions_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - basic_auth
