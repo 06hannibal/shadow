@@ -1,0 +1,5 @@
+name: Transactions Stock API
+description: API for update product variation like in form Stock location transaction.
+package: Custom
+type: module
+core: 8.x

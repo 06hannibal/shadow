@@ -3,13 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
-    - user.role.distributor
     - user.role.manufacturer
   module:
     - commerce
     - commerce_store
-    - rest
-    - serialization
     - user
 id: stores
 label: Stores
@@ -386,7 +383,7 @@ display:
           admin_label: ''
           default_action: default
           exception:
-            value: '1'
+            value: all
             title_enable: false
             title: All
           title_enable: false
@@ -406,13 +403,12 @@ display:
           specify_validation: true
           validate:
             type: 'entity:user'
-            fail: 'not found'
+            fail: ignore
           validate_options:
             operation: view
             multiple: 0
             restrict_roles: true
             roles:
-              distributor: distributor
               manufacturer: manufacturer
             access: false
           break_phrase: false
@@ -445,22 +441,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
-        - user
-      tags: {  }
-  rest_export_1:
-    display_plugin: rest_export
-    id: rest_export_1
-    display_title: 'REST export'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      path: store/ajax_stores
-    cache_metadata:
-      max-age: 0
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - request_format
-        - url
         - user
       tags: {  }

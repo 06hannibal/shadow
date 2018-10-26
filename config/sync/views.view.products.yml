@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - user.role.distributor
     - user.role.manufacturer
   module:
     - commerce
@@ -582,13 +581,12 @@ display:
           specify_validation: true
           validate:
             type: 'entity:user'
-            fail: empty
+            fail: ignore
           validate_options:
             operation: view
             multiple: 0
             restrict_roles: true
             roles:
-              distributor: distributor
               manufacturer: manufacturer
             access: false
           break_phrase: false
