@@ -1,0 +1,24 @@
+uuid: 420102dc-bd71-4171-8713-e608c2f69aff
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - hal
+    - rest_product
+_core:
+  default_config_hash: HDxspVsW1NgEwfvJJLD0vpC56qTYkmJpt9bpboS-nQk
+id: create_product_resource
+plugin_id: create_product_resource
+granularity: method
+configuration:
+  POST:
+    supported_formats:
+      - hal_json
+    supported_auth:
+      - basic_auth
+  PATCH:
+    supported_formats:
+      - hal_json
+    supported_auth:
+      - basic_auth

@@ -114,7 +114,6 @@ class TransactionsResource extends ResourceBase {
     $source_location = $data['source_location'];
     $source_zone = $data['source_zone'];
     $qty = $data['transaction_qty'];
-
     $transaction_note = $data['transaction_note'];
 
     $product_variation = $this->productVariationStorage->load($product_variation_id);
@@ -138,6 +137,6 @@ class TransactionsResource extends ResourceBase {
       $target_zone = $data['target_zone'];
       $this->stockServiceManager->moveStock($product_variation, $source_location, $target_location, $source_zone, $target_zone, $qty, NULL, $currency_code = NULL, $transaction_note);
     }
-      return new ResourceResponse($data);
+      return new ResourceResponse($product_variation->getSku());
   }
 }

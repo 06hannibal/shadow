@@ -46,6 +46,7 @@ module:
   inline_entity_form: 0
   kint: 0
   link: 0
+  manufacture_marketplace: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -55,6 +56,7 @@ module:
   quickedit: 0
   rdf: 0
   rest: 0
+  rest_product: 0
   restui: 0
   search: 0
   serialization: 0
@@ -66,7 +68,6 @@ module:
   text: 0
   toolbar: 0
   tour: 0
-  transactions_stock: 0
   update: 0
   user: 0
   views_ui: 0

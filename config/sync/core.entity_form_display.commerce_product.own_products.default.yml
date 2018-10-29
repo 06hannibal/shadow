@@ -11,7 +11,6 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
-    - inline_entity_form
     - path
 id: commerce_product.own_products.default
 targetEntityType: commerce_product
@@ -68,21 +67,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  variations:
-    type: inline_entity_form_complex
-    weight: 5
-    settings:
-      allow_duplicate: true
-      override_labels: true
-      label_singular: variation
-      label_plural: variations
-      form_mode: default
-      collapsible: false
-      collapsed: false
-      allow_new: true
-      allow_existing: false
-      match_operator: CONTAINS
-    third_party_settings: {  }
-    region: content
 hidden:
   body: true
+  variations: true
