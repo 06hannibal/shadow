@@ -15,20 +15,20 @@ configuration:
       allow_registration: false
       step: login
       weight: 0
-    contact_information:
-      double_entry: true
-      step: order_information
-      weight: 1
     billing_information:
-      step: order_information
-      weight: 2
+      step: _disabled
+      weight: 4
+    contact_information:
+      double_entry: false
+      step: _disabled
+      weight: 5
     review:
       step: review
-      weight: 3
+      weight: 1
     completion_message:
       step: complete
-      weight: 4
+      weight: 2
     order_summary:
-      view: commerce_checkout_order_summary
+      view: ''
       step: _sidebar
-      weight: 5
+      weight: 3
