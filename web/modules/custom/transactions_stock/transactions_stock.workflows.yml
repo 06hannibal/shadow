@@ -1,0 +1,20 @@
+order_sku_workflow:
+  id: order_sku_workflow
+  group: commerce_order
+  label: 'Order SKU'
+  states:
+    draft:
+      label: Draft
+    completed:
+      label: Completed
+    canceled:
+      label: Canceled
+  transitions:
+    place:
+      label: 'Place order'
+      from: [draft]
+      to: completed
+    cancel:
+      label: 'Cancel order'
+      from: [draft]
+      to:   canceled

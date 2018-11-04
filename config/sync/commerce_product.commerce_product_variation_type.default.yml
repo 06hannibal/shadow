@@ -7,6 +7,6 @@ _core:
 id: default
 label: Default
 orderItemType: default
-generateTitle: true
+generateTitle: false
 traits: {  }
 locked: false
