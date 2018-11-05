@@ -561,7 +561,7 @@ display:
           admin_label: ''
           default_action: default
           exception:
-            value: '1'
+            value: all
             title_enable: false
             title: All
           title_enable: false
