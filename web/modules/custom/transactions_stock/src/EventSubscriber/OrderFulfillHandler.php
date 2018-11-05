@@ -47,23 +47,13 @@ class OrderFulfillHandler implements EventSubscriberInterface {
       $uid = $product_variation->get('uid')->getString();
       $order_id = $order_item->getOrderId();
     }
-    //sellStock existing product
-    $commerce_stock_location_author = \Drupal::entityTypeManager()
-      ->getStorage('commerce_stock_location')
-      ->loadByProperties(['field_author'=>$uid]);
-    $commerce_location_author = array_values($commerce_stock_location_author);
-    $location_author = $commerce_location_author[0];
-    $commerce_product_variation_author = \Drupal::entityTypeManager()
-      ->getStorage('commerce_product_variation')
-      ->loadByProperties(['sku'=> $sku_author]);
-    $commerce_variation_author = array_values($commerce_product_variation_author);
-    $variation_author = $commerce_variation_author[0];
     //commerce store new product
     $currentuserid = \Drupal::currentUser()->id();
     $mail = \Drupal::currentUser()->getEmail();
     $commerce_store = \Drupal::entityTypeManager()
       ->getStorage('commerce_store')
       ->loadByProperties(['uid'=>$currentuserid]);
+    $commerce_store_currentuserid = array_values($commerce_store);
 
     if(empty($commerce_store)) {
       $store = Store::create([
@@ -79,7 +69,7 @@ class OrderFulfillHandler implements EventSubscriberInterface {
     ]);
     $store->save();
     } else {
-      $store = \Drupal\commerce_store\Entity\Store::load($stores[0]);
+      $store = $commerce_store_currentuserid[0];
     }
 
     $commerce_stock_location = \Drupal::entityTypeManager()
@@ -142,14 +132,5 @@ class OrderFulfillHandler implements EventSubscriberInterface {
       $qty,
       NULL,
       $currency_code = NULL);
-    $stockService->sellStock(
-      $variation_author,
-      $location_author->id(),
-      t('default zone'),
-      $qty,
-      NULL,
-      $currency_code = NULL,
-      $order_id,
-      $currentuserid);
   }
 }

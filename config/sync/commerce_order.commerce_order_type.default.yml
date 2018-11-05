@@ -15,7 +15,7 @@ _core:
   default_config_hash: pGvuJjaRPhhEY9oSM5EGsAtKWgGNSA-0aq4RIvd4BBE
 label: Default
 id: default
-workflow: order_sku_workflow
+workflow: order_fulfillment
 refresh_mode: customer
 refresh_frequency: 300
 sendReceipt: true
