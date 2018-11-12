@@ -47,6 +47,9 @@ class OrderFulfillHandler implements EventSubscriberInterface {
       $uid = $product_variation->get('uid')->getString();
       $order_id = $order_item->getOrderId();
     }
+    $user_role = \Drupal::currentUser()->getRoles();
+
+    if (in_array("distributor",$user_role)) {
     //commerce store new product
     $currentuserid = \Drupal::currentUser()->id();
     $mail = \Drupal::currentUser()->getEmail();
@@ -132,5 +135,6 @@ class OrderFulfillHandler implements EventSubscriberInterface {
       $qty,
       NULL,
       $currency_code = NULL);
+    }
   }
 }
