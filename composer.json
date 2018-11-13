@@ -86,6 +86,9 @@
         "patches": {
             "drupal/commerce_stock": {
                 "Drupal commerce_stock fix the error field specification entity_type not define not null": "https://www.drupal.org/files/issues/2018-10-08/entity_type_field_specification_does_not_%20define_not_null_TRUE.patch"     
+            },
+"drupal/commerce": {
+                "3007275-8-fix-crash": "https://www.drupal.org/files/issues/2018-10-19/3007275-8-fix-crash.patch"
             }
         }
     }
