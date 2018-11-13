@@ -1,10 +1,11 @@
-uuid: 5f7744be-8888-4103-a4fd-743f5456dbc7
+uuid: b36e38f2-6999-4d59-aec1-991ba53ac880
 langcode: en
 status: true
 dependencies:
   config:
     - commerce_product.commerce_product_variation_type.default
     - core.entity_view_mode.commerce_product_variation.cart
+    - field.field.commerce_product_variation.default.field_stock_level
   enforced:
     module:
       - commerce_cart
@@ -36,6 +37,7 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  field_stock_level: true
   price: true
   sku: true
   title: true

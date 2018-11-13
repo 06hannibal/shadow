@@ -1,4 +1,4 @@
-uuid: e67a894b-b741-4e09-b521-0b4e6fda29f1
+uuid: aded6843-7645-4673-8f62-21451c0b5373
 langcode: en
 status: true
 dependencies:
@@ -11,14 +11,14 @@ entity_type: commerce_stock_location
 bundle: default
 label: author
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
   handler: 'default:user'
   handler_settings:
-    include_anonymous: false
+    include_anonymous: true
     filter:
       type: _none
     target_bundles: null
