@@ -1,0 +1,5 @@
+name: Change SKU
+description: API for update product SKU.
+package: Custom
+type: module
+core: 8.x
