@@ -54,7 +54,7 @@ class OrderFulfillHandler implements EventSubscriberInterface
                 $stores = $product->getStoreIds();
 
                 //create SKU for product (sku + user who bought prod)
-                $sku = $product_variation->getSku() . " " . \Drupal::currentUser()->getAccountName();
+                $sku = $product_variation->getSku() . "_" . \Drupal::currentUser()->getAccountName();
             }
 
             //add new commerce product
