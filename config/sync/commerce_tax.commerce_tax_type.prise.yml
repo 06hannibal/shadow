@@ -1,0 +1,20 @@
+uuid: 1ac4e411-cc0e-4789-8ef1-7829d1129ff0
+langcode: en
+status: true
+dependencies: {  }
+id: prise
+label: prise
+plugin: custom
+configuration:
+  display_label: tax
+  round: false
+  rates:
+    -
+      id: 0e24b9f1-e652-437a-b346-2207c475fb0e
+      label: qwerty
+      percentage: '0.03'
+  territories:
+    -
+      country_code: AF
+  display_inclusive: true
+  user: '1'
