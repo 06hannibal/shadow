@@ -58,9 +58,21 @@ function stores_tax_form_alter(&$form, FormStateInterface $form_state, $form_id)
       ];
     $form['actions']['submit']['#submit'][] = 'stores_tax_form_submit';
     $form['configuration']['#default_value']['round'] = false;
-//    kint($form['configuration']['#default_value']['display_label'] = FALSE);
-//    kint($form['configuration']['#default_value']);
   }
+}
+
+/**
+ * Implements stores_tax_form_submit().
+ */
+function stores_tax_form_submit(array &$form, FormStateInterface $form_state) {
+  $configuration = $form_state->getValue(['configuration']);
+  $user = $form_state->getValue(['user']);
+  $configuration['user'] = $user;
+  $FormObject = $form_state->getFormObject();
+  /** @var \Drupal\commerce_tax\Entity\TaxTypeInterface $type */
+  $type = $FormObject->getEntity();
+  $type->setPluginConfiguration($configuration);
+  $FormObject->getEntity()->save();
 }
 
 /**
@@ -73,19 +85,6 @@ function stores_tax_preprocess_form_element(&$variables) {
     $variables['label'] = FALSE;
     $variables['children'] = FALSE;
   }
-}
-/**
- * {@inheritdoc}
- */
-function stores_tax_form_submit(array &$form, FormStateInterface $form_state) {
-  $configuration = $form_state->getValue(['configuration']);
-  $user = $form_state->getValue(['user']);
-  $configuration['user'] = $user;
-  $FormObject = $form_state->getFormObject();
-  /** @var \Drupal\commerce_tax\Entity\TaxTypeInterface $type */
-  $type = $FormObject->getEntity();
-  $type->setPluginConfiguration($configuration);
-  $FormObject->getEntity()->save();
 }
 
 /**
