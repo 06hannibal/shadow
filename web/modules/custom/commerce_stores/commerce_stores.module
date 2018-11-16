@@ -21,7 +21,6 @@ function commerce_stores_field_widget_form_alter(&$element, FormStateInterface &
       loadByProperties(['uid' => $user_id]);
 
       if (!$stores) {
-        $element['#options'] = false;
         $title_store = t('add own commerce store');
         $url_stores = '/store/add/online';
         $element['#suffix'] = "<div><a class='button button-action button--primary button--small' href='".$url_stores."'>".$title_store."</a></div>";
@@ -64,7 +63,7 @@ function commerce_stores_form_alter(&$form, FormStateInterface $form_state, $for
       $form['product_variation'] = [
         '#markup' => '<div><a class="button button-action button--primary button--small" href="'.$url_product.'">'.$title_product.'</a></div>',
       ];
-      $form['submit'] = NULL;
+      $form['submit']['#access'] = FALSE;
     } else {
       $form['product_variation'] = [
         '#type' => 'select',
@@ -93,16 +92,16 @@ function commerce_stores_form_alter(&$form, FormStateInterface $form_state, $for
       $form['source']['source_location'] = [
         '#markup' => '<div><a class="button button-action button--primary button--small" href="'.$url_location.'">'.$title_location.'</a></div>',
       ];
-      $form['transaction_type'] = NULL;
-      $form['transaction_type'] = NULL;
-      $form['product_variation_id'] = NULL;
-      $form['source']['source_zone'] = NULL;
-      $form['target'] = NULL;
-      $form['user'] = NULL;
-      $form['order'] = NULL;
-      $form['transaction_qty'] = NULL;
-      $form['transaction_note'] = NULL;
-      $form['submit'] = NULL;
+      $form['transaction_type']['#access'] = FALSE;
+      $form['transaction_type']['#access'] = FALSE;
+      $form['product_variation_id']['#access'] = FALSE;
+      $form['source']['source_zone']['#access'] = FALSE;
+      $form['target']['#access'] = FALSE;
+      $form['user']['#access'] = FALSE;
+      $form['order']['#access'] = FALSE;
+      $form['transaction_qty']['#access'] = FALSE;
+      $form['transaction_note']['#access'] = FALSE;
+      $form['submit']['#access'] = FALSE;
     } else {
       $form['source']['source_location'] = [
         '#type' => 'select',

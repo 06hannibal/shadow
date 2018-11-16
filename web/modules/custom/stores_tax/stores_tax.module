@@ -1,0 +1,108 @@
+<?php
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityFormDisplayInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Entity\EntityForm;
+
+/**
+ * Implements hook_form_alter().
+ */
+function stores_tax_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if($form_id == 'commerce_store_online_add_form' || $form_id == 'commerce_store_online_edit_form') {
+    $user_id = Drupal::currentUser()->id();
+    $tax_types = Drupal::entityTypeManager()->getStorage('commerce_tax_type')->loadByProperties();
+    $options = [];
+    foreach ($tax_types as $tax_type) {
+
+      if($tax_type->getPluginConfiguration()['user']==$user_id) {
+        $options[$tax_type->id()] = $tax_type->label();
+      }
+    }
+
+    if(!$options) {
+      $title_tax = t('add own tax type');
+      $url_tax = '/admin/commerce/config/tax-types/add';
+      $form['field_tax'] = [
+        '#markup' => '<div><a class="button button-action button--primary button--small" href="'.$url_tax.'">'.$title_tax.'</a></div>',
+      ];
+    } else {
+      $form['field_tax']['widget']['#options']=$options;
+    }
+  }
+
+  if($form_id == 'commerce_tax_type_edit_form' || $form_id == 'commerce_tax_type_add_form') {
+    $configurations = $form_state->getFormObject()->getEntity()->getPluginconfiguration();
+
+    if(!empty($configurations['user'])) {
+      $user = \Drupal\user\Entity\User::load($configurations['user']);
+    } else {
+      $user = '';
+    }
+    $form['user'] = [
+      '#title' => 'author',
+      '#type' => 'entity_autocomplete',
+      '#target_type' => 'user',
+      '#default_value' => $user,
+      '#selection_settings' => [
+        'include_anonymous' => FALSE,
+        'filter' => [
+          'role' => ['administrator','manufacturer','distributor'],
+          ],
+        ],
+      '#required' => 'true',
+      ];
+    $form['actions']['submit']['#submit'][] = 'stores_tax_form_submit';
+    $form['configuration']['#default_value']['round'] = false;
+  }
+}
+
+/**
+ * Implements stores_tax_form_submit().
+ */
+function stores_tax_form_submit(array &$form, FormStateInterface $form_state) {
+  $configuration = $form_state->getValue(['configuration']);
+  $user = $form_state->getValue(['user']);
+  $configuration['user'] = $user;
+  $FormObject = $form_state->getFormObject();
+  /** @var \Drupal\commerce_tax\Entity\TaxTypeInterface $type */
+  $type = $FormObject->getEntity();
+  $type->setPluginConfiguration($configuration);
+  $FormObject->getEntity()->save();
+}
+
+/**
+ * Implements hook_preprocess_form_element().
+ */
+function stores_tax_preprocess_form_element(&$variables) {
+
+  if($variables['element']['#id'] == "edit-configuration-custom-round") {
+    $variables['description']['content'] = FALSE;
+    $variables['label'] = FALSE;
+    $variables['children'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function stores_tax_entity_access(EntityInterface $entity, $operation,AccountInterface $account) {
+
+  if ($entity->getEntityTypeId()=='commerce_tax_type') {
+    $user_id =$account->id();
+    $tax_author_id = $entity->getPluginConfiguration()['user'];
+    $user_role = $account->getRoles();
+
+    if ($user_id  == $tax_author_id) {
+      return AccessResult::allowed();
+    }
+
+    if (!in_array("administrator",$user_role)) {
+      return AccessResult::forbidden();
+    }
+  }
+}

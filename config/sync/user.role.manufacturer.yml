@@ -15,7 +15,6 @@ permissions:
   - 'access user contact forms'
   - 'administer commerce stock location entities'
   - 'administer commerce stock location types'
-  - 'administer commerce_checkout_flow'
   - 'administer commerce_product_variation form display'
   - 'administer commerce_stock_location display'
   - 'administer commerce_stock_location fields'

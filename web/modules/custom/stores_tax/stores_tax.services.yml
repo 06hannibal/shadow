@@ -1,0 +1,6 @@
+services:
+  stores_tax.tax_order_processor:
+    class: Drupal\stores_tax\StoreOrderProcessor
+    arguments: ['@entity_type.manager', '@commerce_price.rounder']
+    tags:
+    - { name: commerce_order.order_processor, priority: 50, adjustment_type: tax }

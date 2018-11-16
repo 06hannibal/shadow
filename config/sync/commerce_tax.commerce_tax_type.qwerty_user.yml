@@ -1,0 +1,21 @@
+uuid: 42a3f89c-96dc-4f00-88f9-8c8f36e2c28f
+langcode: en
+status: true
+dependencies: {  }
+id: qwerty_user
+label: qwerty-user
+plugin: custom
+configuration:
+  display_label: tax
+  round: true
+  rates:
+    -
+      id: d383ac83-a2d1-4ca0-a0d5-c87ee1d0d78e
+      label: qwerty-user
+      percentage: '0.03'
+  territories:
+    -
+      country_code: UA
+      administrative_area: ''
+  display_inclusive: true
+  user: '13'
