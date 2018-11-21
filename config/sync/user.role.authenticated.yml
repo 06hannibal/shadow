@@ -18,6 +18,7 @@ permissions:
   - 'edit any article content'
   - 'manage own commerce_payment_method'
   - 'post comments'
+  - 'restful post registration_resource'
   - 'restful post user_registration'
   - 'search content'
   - 'skip comment approval'
