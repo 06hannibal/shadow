@@ -80,14 +80,13 @@ function stores_tax_form_submit(array &$form, FormStateInterface $form_state) {
  */
 function stores_tax_preprocess_form_element(&$variables) {
   $element_parents = $variables['element']['#parents'];
-//kint($variables['element']['#parents']);
+
   if($variables['type'] == 'checkbox') {
     if(in_array("display_inclusive",$element_parents, TRUE)) {
       $variables['children'] = '';
       $variables['label_display'] = 'hidden';
     }
   }
-
 }
 
 /**
