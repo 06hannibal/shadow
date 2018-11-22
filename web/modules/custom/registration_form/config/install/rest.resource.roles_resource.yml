@@ -1,5 +1,5 @@
-id: registration_resource
-plugin_id: registration_resource
+id: roles_resource
+plugin_id: roles_resource
 granularity: resource
 configuration:
   methods:

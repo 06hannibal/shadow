@@ -72,7 +72,7 @@ class RegistrationResource extends ResourceBase {
     $login_auth = $data['login_auth'];
     $pass_auth = $data['pass_auth'];
 
-    if(!empty($login_auth) || !empty($pass_auth)) {
+    if(!empty($login_auth) && !empty($pass_auth)) {
       $uid = \Drupal::service('user.auth')->authenticate($login_auth, $pass_auth);
       $user_uid = User::load($uid);
       $user_role = $user_uid->getRoles();

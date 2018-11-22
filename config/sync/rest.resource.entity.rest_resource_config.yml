@@ -1,22 +1,21 @@
-uuid: cb1fa648-d413-4a02-9e42-b1338f680fa0
+uuid: 2f18b5a7-f592-4336-b5e1-b3adc9481275
 langcode: en
 status: true
 dependencies:
   module:
     - basic_auth
     - hal
-    - registration_form
     - serialization
-_core:
-  default_config_hash: TVxd7jdjs5Z1hbuPjaGff34fdYILqI0Ewx1p7bOqU3A
-id: registration_resource
-plugin_id: registration_resource
+    - user
+id: entity.rest_resource_config
+plugin_id: 'entity:rest_resource_config'
 granularity: resource
 configuration:
   methods:
-    - POST
+    - GET
   formats:
     - hal_json
     - json
   authentication:
     - basic_auth
+    - cookie
