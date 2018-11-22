@@ -11,11 +11,12 @@ _core:
   default_config_hash: 0xiqugFVDEhss037BevJwnzTQK04dZVi4bYQiQt2cnM
 id: transactions_resource
 plugin_id: transactions_resource
-granularity: method
+granularity: resource
 configuration:
-  POST:
-    supported_formats:
-      - hal_json
-      - json
-    supported_auth:
-      - basic_auth
+  methods:
+    - POST
+  formats:
+    - hal_json
+    - json
+  authentication:
+    - basic_auth

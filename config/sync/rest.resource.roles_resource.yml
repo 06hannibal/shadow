@@ -1,4 +1,4 @@
-uuid: cb1fa648-d413-4a02-9e42-b1338f680fa0
+uuid: 2164607b-3662-4d6e-b011-ae40f96bfe67
 langcode: en
 status: true
 dependencies:
@@ -7,16 +7,18 @@ dependencies:
     - hal
     - registration_form
     - serialization
+    - user
 _core:
-  default_config_hash: TVxd7jdjs5Z1hbuPjaGff34fdYILqI0Ewx1p7bOqU3A
-id: registration_resource
-plugin_id: registration_resource
+  default_config_hash: RyVuMw1Wv1B59roVwLxn8vIFaJcKb8J3EClD8nlarOI
+id: roles_resource
+plugin_id: roles_resource
 granularity: resource
 configuration:
   methods:
-    - POST
+    - GET
   formats:
     - hal_json
     - json
   authentication:
     - basic_auth
+    - cookie

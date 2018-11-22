@@ -64,9 +64,6 @@ class FormRegistration extends FormBase {
     ];
 
     $roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadByProperties();
-//    kint($roles);
-    $lalala = 'distributor';
-
     foreach ($roles as $role) {
       $role_id = $role->id();
 
