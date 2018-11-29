@@ -1,0 +1,5 @@
+name: Stores Commerce Tax
+description: Tax settings for your own store.
+package: Custom
+type: module
+core: 8.x

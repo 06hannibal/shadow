@@ -9,6 +9,7 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  changes_sku: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -58,6 +59,7 @@ module:
   profile: 0
   quickedit: 0
   rdf: 0
+  registration_form: 0
   rest: 0
   rest_product: 0
   restui: 0
@@ -66,6 +68,7 @@ module:
   shortcut: 0
   simple_block: 0
   state_machine: 0
+  stores_tax: 0
   system: 0
   taxonomy: 0
   text: 0

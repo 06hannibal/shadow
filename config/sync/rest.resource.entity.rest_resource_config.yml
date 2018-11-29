@@ -1,23 +1,21 @@
-uuid: 600a2c85-130e-4c3d-830d-47c86380b2f9
+uuid: 2f18b5a7-f592-4336-b5e1-b3adc9481275
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - basic_auth
     - hal
     - serialization
     - user
-id: entity.user
-plugin_id: 'entity:user'
+id: entity.rest_resource_config
+plugin_id: 'entity:rest_resource_config'
 granularity: resource
 configuration:
   methods:
     - GET
-    - POST
-    - DELETE
-    - PATCH
   formats:
     - hal_json
     - json
   authentication:
     - basic_auth
+    - cookie

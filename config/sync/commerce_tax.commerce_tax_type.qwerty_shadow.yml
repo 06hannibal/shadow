@@ -1,0 +1,21 @@
+uuid: e2882754-78c0-47e7-915d-a4343c961dcd
+langcode: en
+status: true
+dependencies: {  }
+id: qwerty_shadow
+label: qwerty-shadow
+plugin: custom
+configuration:
+  display_label: tax
+  round: true
+  rates:
+    -
+      id: d6d200ce-f482-43ca-bce9-b4bf67da9546
+      label: qwerty-shadow
+      percentage: '0.01'
+  territories:
+    -
+      country_code: UA
+      administrative_area: ''
+  display_inclusive: true
+  user: '1'

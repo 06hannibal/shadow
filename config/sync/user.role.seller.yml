@@ -1,10 +1,10 @@
-uuid: 105447f3-652a-440f-9672-cd517e6f49a5
+uuid: ae3c0f54-a8f6-4553-a940-d69da12468f3
 langcode: en
 status: true
 dependencies: {  }
-id: manufacturer
-label: Manufacturer
-weight: 4
+id: seller
+label: Seller
+weight: 5
 is_admin: null
 permissions:
   - 'access commerce administration pages'

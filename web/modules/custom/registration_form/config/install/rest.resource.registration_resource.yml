@@ -1,0 +1,12 @@
+id: registration_resource
+plugin_id: registration_resource
+granularity: resource
+configuration:
+  methods:
+  - POST
+  formats:
+  - hal_json
+  - json
+  authentication:
+  - basic_auth
+  - cookie
