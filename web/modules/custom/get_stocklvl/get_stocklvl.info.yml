@@ -1,0 +1,8 @@
+name: Get stock level
+description: Examples for REST Resource for fetch stock level from product variations by location_id
+type: module
+core: 8.x
+version: 1.x
+
+dependencies:
+ - rest
