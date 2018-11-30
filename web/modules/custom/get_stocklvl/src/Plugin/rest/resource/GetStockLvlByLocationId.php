@@ -85,20 +85,20 @@ class GetStockLvlByLocationId extends ResourceBase {
         }
 
 
-        $query = \Drupal::database() -> select('commerce_stock_location_level', 'csll');
-        $query -> fields('csll', array('location_id','qty','entity_id'));
+        $query = \Drupal::database() -> select('commerce_stock_transaction', 'cst');
+        $query -> fields('cst', array('location_id','qty','entity_id'));
         $query -> condition('location_id', $location_id);
         $query -> condition('entity_id', $entity_id);
         $results = $query -> execute() -> fetchAll();
-
+        $sum=0;
         foreach ($results as $entity) {
             $rows[] = [
-                'QTY(stock lvl)' => $entity->qty,
-                'Location ID' => $entity->location_id,
-                'Entity(variation) ID' => $entity->entity_id,
+                'QTY(stock lvl)' => $entity -> qty,
+                'Location ID' => $entity -> location_id,
+                'Entity(variation) ID' => $entity -> entity_id,
+                'Total' => $sum += $entity -> qty,
             ];
         }
-
         if ($location_id == $entity->location_id) {
             $response = new ResourceResponse($rows);
             $response->addCacheableDependency($rows);
