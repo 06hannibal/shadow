@@ -6,7 +6,6 @@ use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Session\AccountProxyInterface;
 use Drupal\rest\Plugin\ResourceBase;
 use Drupal\rest\ResourceResponse;
-use Drupal\user\UserInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -69,7 +68,6 @@ class RolesResource extends ResourceBase {
         'max-age' => 0,
       ],
     ]);
-
     $role_user = $this->currentUser->getRoles();
 
     if (in_array("administrator",$role_user)) {
