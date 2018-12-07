@@ -1,0 +1,9 @@
+id: get_stocklvl
+plugin_id: get_stocklvl
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - json
+    supported_auth:
+      - basic_auth

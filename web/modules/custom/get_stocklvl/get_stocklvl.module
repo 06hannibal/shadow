@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function get_stocklvl_form_alter(&$form, $form_state, $form_id) {
+    if ($form_id == "commerce_stock_transactions2") {
+        $form['#submit'][] = 'get_stocklvl_commerce_stock_transactions2_forma_submit';
+    }
+}
+
+function get_stocklvl_commerce_stock_transactions2_forma_submit($form, &$form_state) {
+    if(!empty($form_state)){
+        drupal_set_message('Success, STOCK transaction created','status');
+    } else {
+        drupal_set_message('The form is not filled completely','error');
+    }
+}
