@@ -1,12 +1,13 @@
 uuid: d4f1ba20-3dea-401a-9575-59ed3f25ba2e
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - basic_auth
     - hal
     - node
     - serialization
+    - user
 _core:
   default_config_hash: t_jfECmZhJqBOJuSOFn87EOi_TWi-_fRYTuJgd19vgg
 id: entity.node
@@ -23,3 +24,4 @@ configuration:
     - json
   authentication:
     - basic_auth
+    - cookie
