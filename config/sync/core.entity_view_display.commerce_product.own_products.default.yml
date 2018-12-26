@@ -17,7 +17,7 @@ bundle: own_products
 mode: default
 content:
   field_own_products_image:
-    weight: 2
+    weight: 1
     label: hidden
     settings:
       image_style: ''
@@ -27,23 +27,15 @@ content:
     region: content
   stores:
     type: entity_reference_label
-    weight: 1
+    weight: 0
     region: content
     label: above
     settings:
       link: true
     third_party_settings: {  }
-  title:
-    label: hidden
-    type: string
-    weight: 0
-    region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   variations:
     type: commerce_add_to_cart
-    weight: 3
+    weight: 2
     label: above
     settings:
       combine: true
@@ -52,4 +44,5 @@ content:
 hidden:
   body: true
   created: true
+  title: true
   uid: true

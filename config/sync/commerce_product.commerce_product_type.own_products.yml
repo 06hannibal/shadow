@@ -6,6 +6,7 @@ id: own_products
 label: 'own products'
 description: ''
 variationType: default
+multipleVariations: true
 injectVariationFields: true
 traits: {  }
 locked: false

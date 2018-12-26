@@ -21,7 +21,7 @@ content:
   list_price:
     label: above
     type: commerce_price_default
-    weight: -1
+    weight: 1
     region: content
     settings:
       strip_trailing_zeroes: false
@@ -29,7 +29,7 @@ content:
     third_party_settings: {  }
   product_id:
     type: entity_reference_label
-    weight: 0
+    weight: 2
     label: hidden
     settings:
       link: true
@@ -38,7 +38,7 @@ content:
   title:
     label: hidden
     type: string
-    weight: -5
+    weight: 0
     settings:
       link_to_entity: false
     third_party_settings: {  }

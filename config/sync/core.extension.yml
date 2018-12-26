@@ -15,6 +15,7 @@ module:
   comment: 0
   commerce: 0
   commerce_cart: 0
+  commerce_cart_api: 0
   commerce_checkout: 0
   commerce_log: 0
   commerce_order: 0
@@ -34,6 +35,7 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
+  devel_generate: 0
   distributor_role: 0
   dynamic_page_cache: 0
   editor: 0

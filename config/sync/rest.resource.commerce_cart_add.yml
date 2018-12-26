@@ -1,0 +1,22 @@
+uuid: 8f8db21d-336e-4514-8150-68ea01116507
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart_api
+    - hal
+    - serialization
+    - user
+_core:
+  default_config_hash: LptJMeSNAYdcJ0FCczBiIiAvSs3pgfeITgwPlUR5LmM
+id: commerce_cart_add
+plugin_id: commerce_cart_add
+granularity: resource
+configuration:
+  methods:
+    - POST
+  formats:
+    - hal_json
+    - json
+  authentication:
+    - cookie

@@ -1,21 +1,18 @@
-uuid: 9549bd54-bbad-49e7-92a3-d77e7660a538
+uuid: 9c173778-d764-4d15-aee5-0aba8fa72ae7
 langcode: en
 status: true
 dependencies:
-  config:
-    - commerce_product.commerce_product_type.own_products
   module:
-    - commerce
     - commerce_product
     - rest
     - serialization
-id: rest_export_product
-label: 'Rest export product'
+id: variations
+label: Variations
 module: views
 description: ''
 tag: ''
-base_table: commerce_product_field_data
-base_field: product_id
+base_table: commerce_product_variation_field_data
+base_field: variation_id
 core: 8.x
 display:
   default:
@@ -76,10 +73,10 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
-        product_id:
-          id: product_id
-          table: commerce_product_field_data
-          field: product_id
+        variation_id:
+          id: variation_id
+          table: commerce_product_variation_field_data
+          field: variation_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -128,7 +125,7 @@ display:
           type: number_integer
           settings:
             thousand_separator: ''
-            prefix_suffix: false
+            prefix_suffix: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -139,11 +136,11 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_product
-          entity_field: product_id
+          entity_type: commerce_product_variation
+          entity_field: variation_id
           plugin_id: field
         title:
-          table: commerce_product_field_data
+          table: commerce_product_variation_field_data
           field: title
           id: title
           entity_type: null
@@ -206,10 +203,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        uid:
-          id: uid
-          table: commerce_product_field_data
-          field: uid
+        product_id:
+          id: product_id
+          table: commerce_product_variation_field_data
+          field: product_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -255,9 +252,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: false
+          type: entity_reference_entity_id
+          settings: {  }
           group_column: target_id
           group_columns: {  }
           group_rows: true
@@ -268,40 +264,20 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: commerce_product
-          entity_field: uid
+          entity_type: commerce_product_variation
+          entity_field: product_id
           plugin_id: field
-      filters:
-        status:
-          value: '1'
-          table: commerce_product_field_data
-          field: status
-          plugin_id: boolean
-          entity_type: commerce_product
-          entity_field: status
-          id: status
-          expose:
-            operator: ''
-          group: 1
-        type:
-          id: type
-          table: commerce_product_field_data
-          field: type
-          value:
-            own_products: own_products
-          entity_type: commerce_product
-          entity_field: type
-          plugin_id: commerce_entity_bundle
+      filters: {  }
       sorts: {  }
       header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments:
-        product_id:
-          id: product_id
-          table: commerce_product_field_data
-          field: product_id
+        variation_id:
+          id: variation_id
+          table: commerce_product_variation_field_data
+          field: variation_id
           relationship: none
           group_type: group
           admin_label: ''
@@ -332,8 +308,8 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
-          entity_type: commerce_product
-          entity_field: product_id
+          entity_type: commerce_product_variation
+          entity_field: variation_id
           plugin_id: numeric
       display_extenders: {  }
     cache_metadata:
@@ -352,7 +328,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: own_product/product
+      path: own_product/variations
       pager:
         type: some
         options:
@@ -361,6 +337,7 @@ display:
       style:
         type: serializer
         options:
+          grouping: {  }
           uses_fields: false
           formats: {  }
       row:
@@ -368,10 +345,8 @@ display:
         options:
           field_options:
             title:
-              alias: title
+              alias: ''
               raw_output: false
-      defaults:
-        fields: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -387,12 +362,18 @@ display:
     position: 2
     display_options:
       display_extenders: {  }
-      path: own_product/product/%
+      path: own_product/variations/%
       row:
         type: data_field
         options:
           field_options:
+            variation_id:
+              alias: ''
+              raw_output: false
             title:
+              alias: ''
+              raw_output: false
+            product_id:
               alias: ''
               raw_output: false
     cache_metadata:
