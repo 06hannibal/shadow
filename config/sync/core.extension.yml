@@ -31,6 +31,7 @@ module:
   commerce_stores: 0
   commerce_tax: 0
   config: 0
+  consumers: 0
   contact: 0
   contextual: 0
   datetime: 0
