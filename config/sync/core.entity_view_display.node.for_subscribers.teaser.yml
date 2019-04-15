@@ -1,0 +1,22 @@
+uuid: 1da7088f-cd2a-4ba4-b802-dd6bc9dce856
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.for_subscribers.field_sub_image
+    - node.type.for_subscribers
+  module:
+    - user
+id: node.for_subscribers.teaser
+targetEntityType: node
+bundle: for_subscribers
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_sub_image: true

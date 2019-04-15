@@ -1,0 +1,47 @@
+uuid: 731a57f6-e954-4335-9330-0233259f87b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.for_subscribers.field_sub_body
+    - field.field.node.for_subscribers.field_sub_image
+    - field.field.node.for_subscribers.field_sub_title
+    - node.type.for_subscribers
+  module:
+    - image
+    - text
+    - user
+id: node.for_subscribers.default
+targetEntityType: node
+bundle: for_subscribers
+mode: default
+content:
+  field_sub_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_sub_image:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_sub_title:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

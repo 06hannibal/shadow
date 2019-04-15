@@ -1,0 +1,26 @@
+uuid: d94ac3a7-fefd-4203-aafa-636be93e2936
+langcode: en
+status: true
+dependencies:
+  module:
+    - sub_block
+    - system
+  theme:
+    - bartik
+id: subblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: sub_block
+settings:
+  id: sub_block
+  label: SubBlock
+  provider: sub_block
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /forsubs
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,9 @@
+uuid: 769cb618-a619-429b-8b3f-eb76ca1bec35
+langcode: en
+status: true
+dependencies: {  }
+id: sub10dollar
+label: Sub10dollar
+weight: 6
+is_admin: null
+permissions: {  }

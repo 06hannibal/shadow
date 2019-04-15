@@ -1,0 +1,21 @@
+uuid: 7dfeacef-5887-4cc9-baca-973a2ab26a2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sub_title
+    - node.type.for_subscribers
+  module:
+    - text
+id: node.for_subscribers.field_sub_title
+field_name: field_sub_title
+entity_type: node
+bundle: for_subscribers
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

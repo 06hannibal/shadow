@@ -1,0 +1,25 @@
+uuid: a197e6e0-76dc-4c33-92a4-4a807f954b17
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:1d27c022-83f6-4de2-8ddc-a37b63fbe10d'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: donate
+theme: bartik
+region: footer_first
+weight: 0
+provider: null
+plugin: 'block_content:1d27c022-83f6-4de2-8ddc-a37b63fbe10d'
+settings:
+  id: 'block_content:1d27c022-83f6-4de2-8ddc-a37b63fbe10d'
+  label: Donate
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

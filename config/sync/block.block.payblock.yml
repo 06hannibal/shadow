@@ -1,0 +1,26 @@
+uuid: 068d6fb3-c30e-4b60-912f-05f444561cae
+langcode: en
+status: true
+dependencies:
+  module:
+    - pay_block
+    - system
+  theme:
+    - bartik
+id: payblock
+theme: bartik
+region: content
+weight: 0
+provider: null
+plugin: pay_block
+settings:
+  id: pay_block
+  label: PayBlock
+  provider: pay_block
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '/product/*'
+    negate: false
+    context_mapping: {  }

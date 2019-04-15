@@ -1,0 +1,25 @@
+uuid: 3b42469b-2700-4b82-8195-4a7f0c89ba39
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7f1e7f73-d1aa-48c5-86b2-59b918723ea4'
+  module:
+    - block_content
+  theme:
+    - bartik
+id: subscription
+theme: bartik
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:7f1e7f73-d1aa-48c5-86b2-59b918723ea4'
+settings:
+  id: 'block_content:7f1e7f73-d1aa-48c5-86b2-59b918723ea4'
+  label: Subscription
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
