@@ -1,0 +1,15 @@
+sub_block.sub_block:
+  path: '/forsubs'
+  defaults:
+    _controller: '\Drupal\sub_block\Controller\Forsubs::Content'
+    _title: 'For being our subscriber'
+  requirements:
+    _access: 'TRUE'
+
+sub_block.sub_block_completed:
+  path: '/forsubs/{variable}'
+  defaults:
+    _controller: '\Drupal\sub_block\Controller\Forsubs::Transstatus'
+    _title: 'Dear user!'
+  requirements:
+    _access: 'TRUE'

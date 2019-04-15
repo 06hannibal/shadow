@@ -1,0 +1,7 @@
+name: 'Sub block'
+description: 'Subscription button for our subscribers'
+core: 8.x
+package: Custom
+dependencies:
+  -block
+type: module

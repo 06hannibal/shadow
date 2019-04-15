@@ -1,0 +1,13 @@
+#paypal-button-container {
+    height: 80px;
+    width: 20%;
+    overflow: hidden;
+    min-width: 0px !important;
+}
+#href_for_subs {
+    display: none;
+    width: 155px;
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
