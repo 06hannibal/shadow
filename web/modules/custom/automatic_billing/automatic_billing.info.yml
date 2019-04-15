@@ -1,0 +1,5 @@
+name: 'Automatic Billing'
+description: 'Automatic billing button for our service'
+core: 8.x
+package: Custom
+type: module

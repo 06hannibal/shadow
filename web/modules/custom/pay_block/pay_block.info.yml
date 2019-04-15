@@ -1,0 +1,7 @@
+name: 'Pay block'
+description: 'Buy now button for products'
+core: 8.x
+package: Custom
+dependencies:
+  -block
+type: module

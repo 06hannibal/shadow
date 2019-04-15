@@ -1,0 +1,6 @@
+automatic_billing:
+  css:
+    theme:
+      css/automatic_billing.css: {}
+  js:
+    js/automatic_billing.js: {}

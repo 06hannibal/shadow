@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+
+<head>
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+
+<body>
+<!-- Set up a container element for the button -->
+{#<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_buynowCC_LG.gif" alt="Buy Now">#}
+<div id="paypal-button-container"></div>
+
+<table class="product_table">
+    <thead>
+    <tr>
+        <td><b> Prod ID </b></td>
+        <td><b> Price </b></td>
+        <td><b> Title </b></td>
+        <td><b> Entity ID </b></td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in rows %}
+        <tr>
+            <td> {{ row.product_id }} </td>
+            <td id="prod_price"> {{ row.price }} </td>
+            <td id="prod_title"> {{ row.title }} </td>
+            <td id="entity_id"> {{ row.entity_id }} </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!-- Include the PayPal JavaScript SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=AfkVeeD9MOfjlToFUbTldM_YraPd3qeQp81koUdidBzh9nf9yBWwKpsHhbbBId2kBbeV3erHXf33tvPC&currency=USD"></script>
+{#ATn78nvhfUSYRTMV_CIh8rJTwlTu7uXuiCV3NRyADgTCdBUcog4DnJN02Fb005D42i_XDYjjVZ_gHJej#}
+</body>
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+pay_block:
+  css:
+    theme:
+      css/pay_block.css: {}
+  js:
+    js/pay_block.js: {}

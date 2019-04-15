@@ -1,0 +1,7 @@
+pay_block.pay_block_fin:
+  path: '/products/{variable}'
+  defaults:
+    _controller: '\Drupal\pay_block\Controller\BuyNow::Buynowstatus'
+    _title: 'Operation successfully'
+  requirements:
+    _access: 'TRUE'

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <!-- Add meta tags for mobile and IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+<body>
+<div>
+    <p>Status - <b>{{ status }}</b></p>
+    <p>You paied <b>{{ price }} USD</b> for <b>{{ prod_name }}</b></p>
+    <p>
+        {% if price == 10 %}
+            You choosed <b>1</b> cleaning per month.
+        {% elseif price == 20 %}
+            You choosed <b>2</b> cleanings per month.
+        {% elseif price == 30 %}
+            You choosed <b>3</b> cleanings per month.
+        {% elseif price == 40 %}
+            You choosed <b>4</b> cleanings per month.
+        {% endif %}
+    </p>
+    <a class="back_to_serv" href="https://shadow.loc/autobill">Back to services</a>
+</div>
+</body>

@@ -1,0 +1,6 @@
+sub_block:
+  css:
+    theme:
+      css/sub_block.css: {}
+  js:
+    js/sub_block.js: {}

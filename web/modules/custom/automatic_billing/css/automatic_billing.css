@@ -1,0 +1,19 @@
+/*SERVICES*/
+.service_title {
+    color: #0a6eb4;
+}
+#price {
+    width: 100px;
+}
+.serv_image {
+    width: 100px;
+    float: left;
+    margin: 5px 20px;
+}
+#paypal-button-container-cleaning {
+    width: 220px;
+}
+.back_to_serv {
+    color: black;
+}
+

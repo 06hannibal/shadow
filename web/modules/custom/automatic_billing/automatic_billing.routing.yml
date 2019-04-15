@@ -1,0 +1,15 @@
+automatic_billing.automatic_billing:
+  path: '/autobill'
+  defaults:
+    _controller: '\Drupal\automatic_billing\Controller\Automaticbilling::Billing'
+    _title: 'Services'
+  requirements:
+    _access: 'TRUE'
+
+automatic_billing.automatic_billing_fin:
+  path: '/autobill/{variable}'
+  defaults:
+    _controller: '\Drupal\automatic_billing\Controller\Automaticbilling::Billingfin'
+    _title: 'Transaction completion'
+  requirements:
+    _access: 'TRUE'

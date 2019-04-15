@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function automatic_billing_theme($existing, $type, $theme, $path) {
+    return [
+        'automatic_billing' => [
+            'variables' => [
+                'rows' => NULL,
+            ]
+        ],
+        'automatic_billing_fin' => [
+            'variables' => [
+                'status' => NULL,
+                'price' => NULL,
+                'prod_name' => NULL,
+            ]
+        ]
+    ];
+}
