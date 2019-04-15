@@ -1,0 +1,10 @@
+uuid: a9853b12-f9c4-423e-8093-c072f169ac97
+langcode: en
+status: true
+dependencies: {  }
+id: subscriber
+label: Subscriber
+weight: 6
+is_admin: null
+permissions:
+  - 'view for_subs commerce_product'

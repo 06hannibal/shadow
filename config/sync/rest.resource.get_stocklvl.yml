@@ -1,0 +1,21 @@
+uuid: 6418b40f-5cf8-4e0d-bd1c-d86f235748a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_auth
+    - get_stocklvl
+    - hal
+    - serialization
+_core:
+  default_config_hash: 2yHcsczeGR_ISRH_58tBSAN7yCk0URleMvB5UrffAdc
+id: get_stocklvl
+plugin_id: get_stocklvl
+granularity: method
+configuration:
+  GET:
+    supported_formats:
+      - hal_json
+      - json
+    supported_auth:
+      - basic_auth

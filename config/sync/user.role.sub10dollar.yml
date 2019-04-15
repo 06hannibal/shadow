@@ -1,0 +1,9 @@
+uuid: 2aa19962-86a1-466d-83dd-df707b0fd458
+langcode: en
+status: true
+dependencies: {  }
+id: sub10dollar
+label: Sub10dollar
+weight: 7
+is_admin: null
+permissions: {  }

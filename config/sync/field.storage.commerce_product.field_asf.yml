@@ -1,0 +1,19 @@
+uuid: 9fa82b29-c2ac-4e31-805d-930290631d02
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce
+    - commerce_product
+id: commerce_product.field_asf
+field_name: field_asf
+entity_type: commerce_product
+type: commerce_remote_id
+settings: {  }
+module: commerce
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

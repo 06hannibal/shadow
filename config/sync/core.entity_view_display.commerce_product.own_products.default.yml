@@ -5,6 +5,7 @@ dependencies:
   config:
     - commerce_product.commerce_product_type.own_products
     - field.field.commerce_product.own_products.body
+    - field.field.commerce_product.own_products.field_asf
     - field.field.commerce_product.own_products.field_own_products_image
     - field.field.commerce_product.own_products.stores
     - field.field.commerce_product.own_products.variations
@@ -52,4 +53,5 @@ content:
 hidden:
   body: true
   created: true
+  field_asf: true
   uid: true

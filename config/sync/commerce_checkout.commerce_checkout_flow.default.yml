@@ -1,9 +1,7 @@
-uuid: c9737e88-fd2b-45dc-b25e-71196296d886
+uuid: 8330373e-b4ed-46ea-80ca-2173478fbbb8
 langcode: en
 status: true
-dependencies:
-  module:
-    - commerce_promotion
+dependencies: {  }
 _core:
   default_config_hash: wwkDVBiXUqSzRifJbb71ajFBklJdNJ_DgS67IF-_qgY
 id: default

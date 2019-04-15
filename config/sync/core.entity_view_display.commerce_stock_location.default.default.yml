@@ -1,4 +1,4 @@
-uuid: d8f7e3d4-e25e-41b1-a4fc-faca9ec90d8b
+uuid: 6186e982-db58-4a29-a60b-911adb075ce7
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: default
 mode: default
 content:
   field_author:
-    weight: -3
+    weight: -4
     label: above
     settings:
       link: true

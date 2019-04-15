@@ -1,4 +1,4 @@
-uuid: 607b11aa-642f-4fd5-98f0-42a82915f07c
+uuid: 7e74a367-0f88-4675-adf6-b57c6b0a0b3e
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ bundle: default
 mode: default
 content:
   field_author:
-    weight: 4
+    weight: 3
     settings:
       match_operator: CONTAINS
       size: 60

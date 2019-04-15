@@ -1,4 +1,4 @@
-uuid: 2164607b-3662-4d6e-b011-ae40f96bfe67
+uuid: 9f9ebd2f-7561-4af1-8b7f-5e63586e54ad
 langcode: en
 status: true
 dependencies:
@@ -9,13 +9,13 @@ dependencies:
     - serialization
     - user
 _core:
-  default_config_hash: RyVuMw1Wv1B59roVwLxn8vIFaJcKb8J3EClD8nlarOI
+  default_config_hash: yncVfxsxebzs1dnvU52OIoXNPH5WwLNEOsGouAZk6dI
 id: roles_resource
 plugin_id: roles_resource
 granularity: resource
 configuration:
   methods:
-    - GET
+    - POST
   formats:
     - hal_json
     - json

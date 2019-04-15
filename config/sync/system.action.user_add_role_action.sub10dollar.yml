@@ -1,0 +1,14 @@
+uuid: 84df9ed7-31e2-4417-8dab-40f16a904694
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sub10dollar
+  module:
+    - user
+id: user_add_role_action.sub10dollar
+label: 'Add the Sub10dollar role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: sub10dollar

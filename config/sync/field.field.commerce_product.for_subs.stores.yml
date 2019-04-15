@@ -1,0 +1,21 @@
+uuid: 3562722a-e9a8-42d9-8bba-45ad9e9883bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.for_subs
+    - field.storage.commerce_product.stores
+id: commerce_product.for_subs.stores
+field_name: stores
+entity_type: commerce_product
+bundle: for_subs
+label: Stores
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: null
+settings:
+  handler: 'default:commerce_store'
+  handler_settings: {  }
+field_type: entity_reference

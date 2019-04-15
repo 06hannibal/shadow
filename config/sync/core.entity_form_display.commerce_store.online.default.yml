@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - commerce_store.commerce_store_type.online
-    - field.field.commerce_store.online.field_tax
   module:
     - address
-    - path
 _core:
   default_config_hash: aOjgfb6yMxeaSWFwXTCknWVCT0JD6vYcflAXlczbBEI
 id: commerce_store.online.default
@@ -34,12 +32,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_tax:
-    weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_buttons
-    region: content
   mail:
     type: email_default
     weight: 1
@@ -56,12 +48,17 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 5
+  prices_include_tax:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 3
+    region: content
+    third_party_settings: {  }
+  tax_registrations:
+    type: options_select
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden:
-  prices_include_tax: true
-  tax_registrations: true
+hidden: {  }

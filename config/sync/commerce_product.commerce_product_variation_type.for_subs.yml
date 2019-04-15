@@ -1,0 +1,10 @@
+uuid: 30853dcc-b618-4708-83ba-6cf7282b2df4
+langcode: en
+status: true
+dependencies: {  }
+id: for_subs
+label: for_subs
+orderItemType: default
+generateTitle: null
+traits: {  }
+locked: false

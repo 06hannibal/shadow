@@ -1,0 +1,12 @@
+uuid: c275347c-0a85-451f-8baf-f6b6659f2fe0
+langcode: en
+status: true
+dependencies: {  }
+id: for_subs
+label: for_subs
+description: 'This type of product will be available after subscription'
+variationType: for_subs
+multipleVariations: true
+injectVariationFields: true
+traits: {  }
+locked: false

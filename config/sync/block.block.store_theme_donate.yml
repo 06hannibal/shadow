@@ -1,0 +1,25 @@
+uuid: cec760f0-8dd2-42dd-82df-679fc65ae4e9
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:188ee6aa-025c-4460-959b-347ef555a919'
+  module:
+    - block_content
+  theme:
+    - store_theme
+id: store_theme_donate
+theme: store_theme
+region: header
+weight: -5
+provider: null
+plugin: 'block_content:188ee6aa-025c-4460-959b-347ef555a919'
+settings:
+  id: 'block_content:188ee6aa-025c-4460-959b-347ef555a919'
+  label: Donate
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

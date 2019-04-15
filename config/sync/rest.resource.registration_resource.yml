@@ -1,4 +1,4 @@
-uuid: cb1fa648-d413-4a02-9e42-b1338f680fa0
+uuid: b723bf96-ab2d-40c1-b32e-9fd5d455e757
 langcode: en
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - registration_form
     - serialization
 _core:
-  default_config_hash: TVxd7jdjs5Z1hbuPjaGff34fdYILqI0Ewx1p7bOqU3A
+  default_config_hash: E8XEcFU7LGE_lBDrjnqLlyYs64jlegZ9zneyZjSCbAY
 id: registration_resource
 plugin_id: registration_resource
 granularity: resource

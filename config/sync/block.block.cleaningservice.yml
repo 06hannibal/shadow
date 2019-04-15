@@ -1,0 +1,31 @@
+uuid: bd946303-769e-4563-8f16-7da26235f7b8
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:f2a07bf3-65c6-4ab6-853f-38a5d4d200e4'
+  module:
+    - block_content
+    - system
+  theme:
+    - bartik
+id: cleaningservice
+theme: bartik
+region: footer_fifth
+weight: -6
+provider: null
+plugin: 'block_content:f2a07bf3-65c6-4ab6-853f-38a5d4d200e4'
+settings:
+  id: 'block_content:f2a07bf3-65c6-4ab6-853f-38a5d4d200e4'
+  label: 'Cleaning service'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '*'
+    negate: false
+    context_mapping: {  }

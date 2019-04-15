@@ -1,0 +1,21 @@
+uuid: 60d537b7-758b-43bb-810d-dd2b25b12980
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.own_products
+    - field.storage.commerce_product.field_asf
+  module:
+    - commerce
+id: commerce_product.own_products.field_asf
+field_name: field_asf
+entity_type: commerce_product
+bundle: own_products
+label: asf
+description: 'remote ID'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: commerce_remote_id

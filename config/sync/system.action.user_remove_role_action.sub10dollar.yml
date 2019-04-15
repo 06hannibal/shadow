@@ -1,0 +1,14 @@
+uuid: 7cad7e3f-31bf-4822-97ce-1c2e9c2ae18c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.sub10dollar
+  module:
+    - user
+id: user_remove_role_action.sub10dollar
+label: 'Remove the Sub10dollar role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: sub10dollar

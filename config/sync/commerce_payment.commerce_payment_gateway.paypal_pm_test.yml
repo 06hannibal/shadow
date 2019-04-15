@@ -1,0 +1,22 @@
+uuid: 2bbedf4b-347d-4787-8e02-e3f073dd40bb
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_paypal
+id: paypal_pm_test
+label: 'PayPal PM test'
+weight: null
+plugin: paypal_express_checkout
+configuration:
+  api_username: poshtaukr-facilitator_api1.ukr.net
+  api_password: HRF4MFR8SPMTKP5G
+  shipping_prompt: shipping_skip
+  signature: A9md0q7TNhRJod8SW78ta67uRtRwAYH1xtN.OIqIMwCDhlEZQVeNzKRr
+  solution_type: SoleLogin
+  display_label: PayPal
+  mode: test
+  payment_method_types:
+    - credit_card
+conditions: {  }
+conditionOperator: AND

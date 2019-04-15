@@ -1,0 +1,7 @@
+uuid: b2b7a400-d105-4e10-9a89-454221bf1562
+langcode: en
+status: true
+dependencies: {  }
+id: location
+label: location
+elementType: select
