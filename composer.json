@@ -22,6 +22,7 @@
         "drupal/admin_toolbar": "^1.24",
         "drupal/commerce": "^2.9",
         "drupal/commerce_stock": "^1.0@alpha",
+        "drupal/commerce_paypal": "^1.0@beta",
         "drupal/console": "^1.0.2",
         "drupal/core": "^8.6.0",
         "drupal/ctools": "^3.0",
