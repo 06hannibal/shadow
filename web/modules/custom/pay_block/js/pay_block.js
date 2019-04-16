@@ -56,7 +56,7 @@
                     });
 
                 }
-            }).render('#paypal-button-container');
+            }).render('#paypal-button-container-paynow');
         }
     };
 })(jQuery, Drupal, drupalSettings);
