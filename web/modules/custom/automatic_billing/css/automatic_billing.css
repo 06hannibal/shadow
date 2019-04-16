@@ -16,4 +16,7 @@
 .back_to_serv {
     color: black;
 }
-
+#bill_button {
+    height: 90px;
+    overflow: hidden;
+}
