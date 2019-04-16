@@ -29,13 +29,13 @@
                             var button = document.getElementById('href_for_subs').style.display = "flex";
                             var tran_status = $.ajax({
                                 type: "POST",
-                                url: 'https://shadow.loc/forsubs/COMPLETED',
+                                url: 'http://shadow.itguild.com.ua/forsubs/COMPLETED',
                                 data: JSON.stringify(playlogs),
                                 success: function (data) {
                                     alert("Transacrion status: " + playlogs);
                                 }
                             });
-                            window.location.href = "https://shadow.loc/forsubs/COMPLETED";
+                            window.location.href = "http://shadow.itguild.com.ua/forsubs/COMPLETED";
                         }
                     });
 

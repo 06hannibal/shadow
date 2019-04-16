@@ -45,13 +45,13 @@
 
                             var tran_status = $.ajax({
                                 type: "POST",
-                                url: 'https://shadow.loc/products/COMPLETED',
+                                url: 'http://shadow.itguild.com.ua/products/COMPLETED',
                                 data: JSON.stringify(playlogs),
                                 success: function (data) {
                                     alert("Transacrion status: " + playlogs);
                                 }
                             });
-                            window.location.href = "https://shadow.loc/products/"+array_vars;
+                            window.location.href = "http://shadow.itguild.com.ua/products/"+array_vars;
                         }
                     });
 

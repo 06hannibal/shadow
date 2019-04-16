@@ -37,13 +37,13 @@
 
                                 var tran_status = $.ajax({
                                     type: "POST",
-                                    url: 'https://shadow.loc/autobill/COMPLETED',
+                                    url: 'http://shadow.itguild.com.ua/autobill/COMPLETED',
                                     data: JSON.stringify(trasaction_status),
                                     success: function (data) {
                                         alert("Transacrion status: " + trasaction_status);
                                     }
                                 });
-                                window.location.href = "https://shadow.loc/autobill/"+vars ;
+                                window.location.href = "http://shadow.itguild.com.ua/autobill/"+vars ;
                             }
                         });
 
